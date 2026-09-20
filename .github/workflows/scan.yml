@@ -1,0 +1,89 @@
+name: OKX Double Bottom Divergence Scan
+
+"on":
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crypto-scanner-run
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Restore watchlist state cache
+        uses: actions/cache/restore@v4
+        with:
+          path: watchlist_state.json
+          key: watchlist-state-${{ github.run_id }}
+          restore-keys: |
+            watchlist-state-
+
+      - name: Prepare data output directory
+        run: mkdir -p docs/data
+
+      - name: Run scanner
+        env:
+          OKX_API_KEY: ${{ secrets.OKX_API_KEY }}
+          OKX_API_SECRET: ${{ secrets.OKX_API_SECRET }}
+          OKX_API_PASSPHRASE: ${{ secrets.OKX_API_PASSPHRASE }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          SIGNALS_JSON_FILE: docs/data/signals.json
+        run: python okx_double_bottom_divergence_v1.py
+
+      - name: Save watchlist state cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: watchlist_state.json
+          key: watchlist-state-${{ github.run_id }}
+
+      - name: Commit and push updated signals
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/data/signals.json
+          if git diff --cached --quiet; then
+            echo "No signal changes to commit."
+            exit 0
+          fi
+          git commit -m "scan: update signals $(date -u +'%Y-%m-%dT%H:%M:%SZ') [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
+
+      - name: Upload scan results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: signals-${{ github.run_id }}
+          path: |
+            docs/data/signals.json
+            signals.log
+            okx_double_bottom_signals.csv
+            okx_watchlist.csv
+            okx_big_wave_abc.csv
+            okx_double_bottom_spec.csv
+          if-no-files-found: ignore
+          retention-days: 30

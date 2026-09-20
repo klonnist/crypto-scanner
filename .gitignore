@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+signals.log
+watchlist_state.json
+okx_ab_fibonacci_signals.csv
+okx_double_bottom_signals.csv
+okx_fib_confluence_signals.csv
+okx_watchlist.csv
+okx_big_wave_abc.csv
+okx_double_bottom_spec.csv

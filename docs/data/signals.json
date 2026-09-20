@@ -1,0 +1,13 @@
+{
+  "generated_at": null,
+  "timeframe": "4h",
+  "summary": {
+    "total_scanned": 0,
+    "skipped_no_data": 0,
+    "skipped_gate_rejected": 0,
+    "matched": 0,
+    "watchlist": 0
+  },
+  "signals": [],
+  "watchlist": []
+}

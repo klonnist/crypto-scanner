@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OKX Double Bottom Divergence Panel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-row">
+    <div>
+      <h1>OKX · Double Bottom Divergence Panel</h1>
+      <p class="subtitle">
+        Sinyaller GitHub Actions tarafından saatlik olarak güncellenir ·
+        fiyat verisi <a href="https://www.okx.com" target="_blank" rel="noopener">OKX</a> genel API'sinden
+      </p>
+    </div>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Tema değiştir">🌙</button>
+  </div>
+
+  <p class="disclaimer">
+    ⚠️ Bu panel otomatik bir teknik analiz tarayıcısının çıktısıdır; yatırım/finansal tavsiye değildir.
+    Yalnızca geçmiş fiyat verisine dayanır, haber/duyarlılık/temel analiz içermez. Geçmiş performans
+    gelecek sonuçların garantisi değildir. Kendi araştırmanızı yapın.
+  </p>
+
+  <p class="updated" id="updated">Son güncelleme: —</p>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="tabs" id="tabs">
+    <button class="tab-btn active" data-tab="signals">Sinyaller</button>
+    <button class="tab-btn" data-tab="watchlist">İzleme Listesi</button>
+  </div>
+
+  <div class="panel" id="panel-signals"></div>
+  <div class="panel" id="panel-watchlist" style="display:none"></div>
+
+  <div class="footer">
+    Statik sayfa · sinyal üretimi yalnızca GitHub Actions üzerinde çalışır ·
+    kaynak kod: <a href="https://github.com/mugiatama34/crypto-scanner" target="_blank" rel="noopener">mugiatama34/crypto-scanner</a>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
