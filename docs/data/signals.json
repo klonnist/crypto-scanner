@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T10:13:02.346656+00:00",
+  "generated_at": "2026-09-21T11:13:04.003210+00:00",
   "timeframe": "4h",
   "strategy": "double_bottom_gate_v2 (2026-07 refactor: tek gate + confidence hiyerarsisi)",
   "parameters": {
@@ -26,26 +26,26 @@
     {
       "symbol": "TRX/USDT",
       "trend": "sabit",
-      "momentum_pct": -0.01,
+      "momentum_pct": 0.0,
       "combined_dist_pct": 11.591,
-      "current_rsi": 70.07,
+      "current_rsi": 70.1,
       "rsi_oversold": false,
       "swing_1_leg_id": 3,
       "swing_1_duration_bars": 97,
       "swing_1_fib_ratio": 0.618,
       "swing_1_fib_price": 0.351756,
-      "swing_1_dist_pct": 2.06,
+      "swing_1_dist_pct": 2.057,
       "swing_1_a_time": "2026-05-26T12:00:00+00:00",
       "swing_1_b_time": "2026-06-11T16:00:00+00:00",
       "swing_2_leg_id": 8,
       "swing_2_duration_bars": 111,
       "swing_2_fib_ratio": 1.272,
       "swing_2_fib_price": 0.314533,
-      "swing_2_dist_pct": 9.531,
+      "swing_2_dist_pct": 9.534,
       "swing_2_a_time": "2026-09-02T00:00:00+00:00",
       "swing_2_b_time": "2026-09-20T12:00:00+00:00",
       "reference_id": "2026-05-26T12:00:00+00:00|2026-06-11T16:00:00+00:00|2026-09-02T00:00:00+00:00|2026-09-20T12:00:00+00:00",
-      "volume_24h_usdt": 4696036.84
+      "volume_24h_usdt": 4849820.82
     }
   ]
 }
