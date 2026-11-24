@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T04:39:37.385265+00:00",
+  "generated_at": "2026-11-24T15:34:02.658606+00:00",
   "timeframe": "4h",
   "strategy": "double_bottom_gate_v2 (2026-07 refactor: tek gate + confidence hiyerarsisi)",
   "parameters": {
@@ -15,61 +15,37 @@
     "rsi_oversold_threshold": 35
   },
   "summary": {
-    "total_scanned": 96,
-    "skipped_no_data": 30,
-    "skipped_gate_rejected": 66,
+    "total_scanned": 84,
+    "skipped_no_data": 25,
+    "skipped_gate_rejected": 59,
     "matched": 0,
-    "watchlist": 2
+    "watchlist": 1
   },
   "signals": [],
   "watchlist": [
     {
-      "symbol": "SOL/USDT",
-      "trend": "kotulesiyor",
-      "momentum_pct": -2.355,
-      "combined_dist_pct": 15.891,
-      "current_rsi": 51.11,
-      "rsi_oversold": false,
-      "swing_1_leg_id": 25,
-      "swing_1_duration_bars": 141,
-      "swing_1_fib_ratio": 0.786,
-      "swing_1_fib_price": 77.55212,
-      "swing_1_dist_pct": 7.237,
-      "swing_1_a_time": "2026-08-01T16:00:00+00:00",
-      "swing_1_b_time": "2026-08-25T04:00:00+00:00",
-      "swing_2_leg_id": 48,
-      "swing_2_duration_bars": 20,
-      "swing_2_fib_ratio": 1.272,
-      "swing_2_fib_price": 78.75568,
-      "swing_2_dist_pct": 8.654,
-      "swing_2_a_time": "2026-11-17T20:00:00+00:00",
-      "swing_2_b_time": "2026-11-21T04:00:00+00:00",
-      "reference_id": "2026-08-01T16:00:00+00:00|2026-08-25T04:00:00+00:00|2026-11-17T20:00:00+00:00|2026-11-21T04:00:00+00:00",
-      "volume_24h_usdt": 131190357.18
-    },
-    {
       "symbol": "LINK/USDT",
-      "trend": "iyilesiyor",
-      "momentum_pct": 0.292,
-      "combined_dist_pct": 10.606,
-      "current_rsi": 58.49,
+      "trend": "kotulesiyor",
+      "momentum_pct": -0.093,
+      "combined_dist_pct": 10.699,
+      "current_rsi": 47.06,
       "rsi_oversold": false,
       "swing_1_leg_id": 26,
       "swing_1_duration_bars": 140,
-      "swing_1_fib_ratio": 0.618,
-      "swing_1_fib_price": 9.448706,
-      "swing_1_dist_pct": 3.553,
+      "swing_1_fib_ratio": 0.786,
+      "swing_1_fib_price": 8.762762,
+      "swing_1_dist_pct": 0.699,
       "swing_1_a_time": "2026-08-01T16:00:00+00:00",
       "swing_1_b_time": "2026-08-25T00:00:00+00:00",
       "swing_2_leg_id": 45,
       "swing_2_duration_bars": 20,
       "swing_2_fib_ratio": 1.272,
       "swing_2_fib_price": 9.804496,
-      "swing_2_dist_pct": 7.053,
+      "swing_2_dist_pct": 10.0,
       "swing_2_a_time": "2026-11-17T20:00:00+00:00",
       "swing_2_b_time": "2026-11-21T04:00:00+00:00",
       "reference_id": "2026-08-01T16:00:00+00:00|2026-08-25T00:00:00+00:00|2026-11-17T20:00:00+00:00|2026-11-21T04:00:00+00:00",
-      "volume_24h_usdt": 5214356.24
+      "volume_24h_usdt": 6607497.12
     }
   ]
 }
